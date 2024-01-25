@@ -56,25 +56,20 @@ const vertexData = [
     -.5, -.5, -.5,
 ];
 
-// const colorData = [
-//     1, 0, 0,    // V1.color
-//     0, 1, 0,    // V2.color
-//     0, 0, 1,    // V3.color
-// ];
+const faceColor = [
+    1, 0, 1,    // V1.color
+    0, 1, 0,    // V2.color
+    0, 0, 1,    // V3.color
+];
 
-function randomColor() {
-    return [Math.random(), Math.random(), Math.random()];
-}
+// function randomColor() {
+//     return [Math.random(), Math.random(), Math.random()];
+// }
 
-// let colorData = [
-//     ...randomColor(),
-//     ...randomColor(),
-//     ...randomColor(),
-// ];
 
 let colorData = [];
 for (let face = 0; face < 6; face++) {
-    let faceColor = randomColor();
+    //let faceColor = randomColor();
     for (let vertex = 0; vertex < 6; vertex++) {
         colorData.push(...faceColor);
     }
@@ -145,7 +140,7 @@ const matrix = mat4.create();
 
 mat4.translate(matrix, matrix, [.2, .5, 0]);
 
-mat4.scale(matrix, matrix, [0.25, 0.25, 0.25]);
+mat4.scale(matrix, matrix, [0.5, 0.5, 0.5]); //modifications made
 
 function animate() {
     requestAnimationFrame(animate);
